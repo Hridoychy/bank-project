@@ -1,18 +1,15 @@
-// function functionIt(num) {
-//     const result=num*2;
-//     return result;
+function doubleIt(num) {
+    const result = num * 2;
+    return result;
+}
+const fiveDouble = doubleIt(5);
+const severDouble = doubleIt(7);
 
-// }
-// const first=doubleIt(5);
-// const second=doubleIt(7);
-
-
-function getInputvalue() {
-    const dipositInput = document.getElementById('diposit-input');
-
+function getInputvalue(inputId) {
+    const dipositInput = document.getElementById(inputId);
     const dipositAmountText = dipositInput.value;
-    const dipositAmount = parseFloat(dipositAmountText)
-        ;
+    const dipositAmount = parseFloat(dipositAmountText);
+    //  clrar input field 
     dipositInput.value = '';
     return dipositAmount;
 }
@@ -27,9 +24,8 @@ document.getElementById('diposit-button').addEventListener('click', function () 
 
     // const dipositAmountText = dipositInput.value;
     // const dipositAmount = parseFloat(dipositAmountText)
-    //     ;
-
-    const dipositAmount = getInputvalue();
+    //  ;
+    const dipositAmount = getInputvalue('diposit-input');
 
 
     // update diposit total 
@@ -58,10 +54,11 @@ document.getElementById('diposit-button').addEventListener('click', function () 
 document.getElementById('withdrow-button').addEventListener('click', function () {
     // console.log('click widraw');
 
-    const withdrowInput = document.getElementById('withdrow-input');
-    const withdrowamountText = withdrowInput.value;
-    const newWithdrowAmount = parseFloat(withdrowamountText);
-    console.log(newWithdrowAmount);
+    // const withdrowInput = document.getElementById('withdrow-input');
+    // const withdrowamountText = withdrowInput.value;
+    // const newWithdrowAmount = parseFloat(withdrowamountText);
+    // console.log(newWithdrowAmount);
+    const newWithdrowAmount = getInputvalue('withdrow-input')
 
     // set withdrow total 
     const withdrowTotal = document.getElementById('widhrow-total');
@@ -69,8 +66,8 @@ document.getElementById('withdrow-button').addEventListener('click', function ()
     const previouseWithderowtotal = parseFloat(previouseWithderowtext);
     const newWithdrowTotal = previouseWithderowtotal + newWithdrowAmount;
     withdrowTotal.innerText = newWithdrowTotal;
-    // clear wthdreow field 
-    withdrowInput.value = '';
+    // // clear wthdreow field 
+    // withdrowInput.value = '';
 
     // update balance 
     const balanceTotal = document.getElementById('balance-total');
